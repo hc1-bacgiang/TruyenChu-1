@@ -2,29 +2,30 @@
 @using truyenchu.Models.Home
 @{
     var themes = new ThemeModel[] {
-        new ThemeModel() {Name="mautoi", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-dark.gif", DisplayName="Màu tối" },
-        new ThemeModel() {Name="mausang", ClassTheme = "light-theme",UrlBgImage = "/contents/background/bg-light.png", DisplayName="Màu sáng"},
-        new ThemeModel() {Name="xanhduong", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-blue.png", DisplayName="Xanh dương"},
-        new ThemeModel() {Name="vangnhat", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-dark-yellow.png", DisplayName="Vàng nhạt"},
-        new ThemeModel() {Name="donhat", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-red.png", DisplayName="Đỏ nhạt"},
-        new ThemeModel() {Name="xanhreu", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-dark-green.png", DisplayName="Xanh rêu"},
-    };
+new ThemeModel() {Name="mautoi", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-dark.gif", DisplayName="Màu tối" },
+new ThemeModel() {Name="mausang", ClassTheme = "light-theme",UrlBgImage = "/contents/background/bg-light.jpg", DisplayName="Màu sáng"},
+    @* new ThemeModel() {Name="xanhduong", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-blue.png", DisplayName="Xanh dương"},
+new ThemeModel() {Name="vangnhat", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-dark-yellow.png", DisplayName="Vàng nhạt"},
+new ThemeModel() {Name="donhat", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-red.png", DisplayName="Đỏ nhạt"},
+new ThemeModel() {Name="xanhreu", ClassTheme = "dark-theme",UrlBgImage = "/contents/background/bg-dark-green.png", DisplayName="Xanh rêu"}, *@
+};
 
     var fontFamily = new List<string>() { "cursive", "sans-serif", "serif", "monospace" };
     var minFontSize = 16;
     var maxFontSize = 40;
     var lineHeights = new[] {
-        new {value="1em",displayname="100%"},
-        new {value="1.2em",displayname="120%"},
-        new {value="1.4em",displayname="140%"},
-        new {value="1.6em",displayname="160%"},
-        new {value="1.8em",displayname="180%"},
-        new {value="2em",displayname="200%"}
-    };
+new {value="1em",displayname="100%"},
+new {value="1.2em",displayname="120%"},
+new {value="1.4em",displayname="140%"},
+new {value="1.6em",displayname="160%"},
+new {value="1.8em",displayname="180%"},
+new {value="2em",displayname="200%"}
+};
 
 
 }
-@if (TempData["ShowSettingMenu"] != null) {
+@if (TempData["ShowSettingMenu"] != null)
+{
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tùy chỉnh
@@ -39,7 +40,7 @@
                         @{
                             ThemeModel currentTheme = null;
                             var themeCookieStr = Context.Request.Cookies["theme"];
-                            if (themeCookieStr !=null) 
+                            if (themeCookieStr != null)
                                 currentTheme = AppUtilities.Base64DecodeObject<ThemeModel>(themeCookieStr);
                         }
                         <select name="maunen" id="" class="form-select">
